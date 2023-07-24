@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class MyUtils {
     private Connection connection;
     private Statement statement;
-    private String schemaName;
+    private String schemaName = "softserve";
 
 
 
@@ -84,32 +84,34 @@ public class MyUtils {
         statement.executeUpdate(sql);
     }
     public void insertTableRoles(String roleName) throws SQLException {
-        String sql = "INSERT INTO  Roles (roleName) VALUES(" + roleName + ");";
+        String sql = "INSERT INTO  Roles (roleName) VALUES ('" + roleName + "');";
         statement.executeUpdate(sql);
     }
     public void insertTableDirections(String directionName) throws SQLException {
-        String sql = "INSERT INTO  Directions (directionName) VALUES(" + directionName + ");";
+        String sql = "INSERT INTO  Directions (directionName) VALUES ('" + directionName + "');";
         statement.executeUpdate(sql);
     }
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
-        String sql = "INSERT INTO  Projects (projectName, directionName) VALUES(" + projectName +
-                "," + directionName + ");";
+        String sql = "INSERT INTO  Projects (projectName, directionName) VALUES ('" + projectName +
+                "'," + getDirectionId(directionName) + ");";
         statement.executeUpdate(sql);
     }
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
-        String sql = "INSERT INTO  Employee (firstName, roleName, projectName) VALUES(" + firstName +
-                "," + roleName + "," + projectName + ");";
+        String sql = "INSERT INTO  Employee (firstName, roleName, projectName) VALUES ('" + firstName +
+                "'," + getRoleId(roleName) + "," + getProjectId(projectName) + ");";
         statement.executeUpdate(sql);
     }
-//    public int getRoleId(String roleName) throws SQLException {
-//        // code
-//    }
-//    public int getDirectionId(String directionName) throws SQLException {
-//        // code
-//    }
-//    public int getProjectId(String projectName) throws SQLException {
-//        // code
-//    }
+    public int getRoleId(String roleName) throws SQLException {
+        return  1;
+    }
+    public int getDirectionId(String directionName) throws SQLException {
+
+        return 1;
+    }
+    public int getProjectId(String projectName) throws SQLException {
+
+        return  1;
+    }
 //    public int getEmployeeId(String firstName) throws SQLException {
 //        // code
 //    }
@@ -142,7 +144,8 @@ public class MyUtils {
         try {
             myUtils.createConnection();
             myUtils.createStatement();
-            myUtils.createSchema("softserve");
+//            myUtils.createSchema("softserve");
+
             myUtils.useSchema();
 //
 //            myUtils.createTableRoles();
