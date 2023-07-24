@@ -11,40 +11,72 @@ public class MyUtils {
     private Statement statement;
     private String schemaName;
 
+
+
     public Connection createConnection() throws SQLException {
         DriverManager.registerDriver(new org.h2.Driver());
-        connection = DriverManager.getConnection("jdbc:h2:mem:test", "root", "");
+        connection = DriverManager.getConnection("jdbc:h2:mem:test", "root", "root");
         return connection;
     }
     public void closeConnection() throws SQLException {
-        // code
+        connection.close();
     }
     public Statement createStatement() throws SQLException {
-        // code
+        statement = connection.createStatement();
+        return statement;
     }
     public void closeStatement() throws SQLException {
-        // code
+        statement.close();
     }
     public void createSchema(String schemaName) throws SQLException {
-        // code
+        this.schemaName = schemaName;
+        String sql = "CREATE SCHEMA " + schemaName + ";";
+        statement.executeUpdate(sql);
     }
     public void dropSchema() throws SQLException {
-        // code
+        String sql = "DROP SCHEMA " + schemaName + ";";
+        statement.executeUpdate(sql);
     }
     public void useSchema() throws SQLException {
-        // code
+        String sql = "SET SCHEMA " + schemaName + ";";
+        statement.executeUpdate(sql);
     }
     public void createTableRoles() throws SQLException {
-        // code
+        String sql = "CREATE TABLE IF NOT EXISTS Roles (" +
+                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "roleName VARCHAR(255)" +
+                ")";
+        statement.executeUpdate(sql);
     }
+
     public void createTableDirections() throws SQLException {
-        // code
+        String sql = "CREATE TABLE IF NOT EXISTS Directions (" +
+                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "directionName VARCHAR(255)" +
+                ")";
+        statement.executeUpdate(sql);
     }
+
     public void createTableProjects() throws SQLException {
-        // code
+        String sql = "CREATE TABLE IF NOT EXISTS Projects (" +
+                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "projectName VARCHAR(255)," +
+                "directionId INT," +
+                "FOREIGN KEY(directionId) REFERENCES Directions(id)" +
+                ")";
+        statement.executeUpdate(sql);
     }
+
     public void createTableEmployee() throws SQLException {
-        // code
+        String sql = "CREATE TABLE IF NOT EXISTS Employee (" +
+                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "firstName VARCHAR(255)," +
+                "roleId INT," +
+                "directionId INT," +
+                "FOREIGN KEY(roleId) REFERENCES Roles(id)," +
+                "FOREIGN KEY(directionId) REFERENCES Directions(id)" +
+                ")";
+        statement.executeUpdate(sql);
     }
     public void dropTable(String tableName) throws SQLException {
         // code
@@ -61,40 +93,63 @@ public class MyUtils {
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
         // code
     }
-    public int getRoleId(String roleName) throws SQLException {
-        // code
-    }
-    public int getDirectionId(String directionName) throws SQLException {
-        // code
-    }
-    public int getProjectId(String projectName) throws SQLException {
-        // code
-    }
-    public int getEmployeeId(String firstName) throws SQLException {
-        // code
-    }
-    public List<String> getAllRoles() throws SQLException {
-        // code
-    }
-    public List<String> getAllDirestion() throws SQLException {
-        // code
-    }
-    public List<String> getAllProjects() throws SQLException {
-        // code
-    }
-    public List<String> getAllEmployee() throws SQLException {
-        // code
-    }
-    public List<String> getAllDevelopers() throws SQLException {
-        // code
-    }
-    public List<String> getAllJavaProjects() throws SQLException {
-        // code
-    }
-    public List<String> getAllJavaDevelopers() throws SQLException {
-        // code
-    }
+//    public int getRoleId(String roleName) throws SQLException {
+//        // code
+//    }
+//    public int getDirectionId(String directionName) throws SQLException {
+//        // code
+//    }
+//    public int getProjectId(String projectName) throws SQLException {
+//        // code
+//    }
+//    public int getEmployeeId(String firstName) throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllRoles() throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllDirestion() throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllProjects() throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllEmployee() throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllDevelopers() throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllJavaProjects() throws SQLException {
+//        // code
+//    }
+//    public List<String> getAllJavaDevelopers() throws SQLException {
+//        // code
+//    }
 
+    public static void main(String[] args) {
+        MyUtils myUtils = new MyUtils();
+        try {
+            myUtils.createConnection();
+            myUtils.createStatement();
+            myUtils.createSchema("softserve");
+            myUtils.useSchema();
+
+            myUtils.createTableRoles();
+            myUtils.createTableDirections();
+            myUtils.createTableProjects();
+            myUtils.createTableEmployee();
+
+//            myUtils.dropTable("Roles");
+//            myUtils.dropSchema();
+
+            myUtils.closeStatement();
+            myUtils.closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
 
 
