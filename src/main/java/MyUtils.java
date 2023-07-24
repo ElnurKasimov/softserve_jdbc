@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class MyUtils {
     private Connection connection;
@@ -15,7 +16,7 @@ public class MyUtils {
 
     public Connection createConnection() throws SQLException {
         DriverManager.registerDriver(new org.h2.Driver());
-        connection = DriverManager.getConnection("jdbc:h2:mem:test", "root", "root");
+        connection = DriverManager.getConnection("jdbc:h2:./test", "root", "root");
         return connection;
     }
     public void closeConnection() throws SQLException {
@@ -79,19 +80,26 @@ public class MyUtils {
         statement.executeUpdate(sql);
     }
     public void dropTable(String tableName) throws SQLException {
-        // code
+        String sql = "DROP TABLE IF  EXISTS " + tableName;
+        statement.executeUpdate(sql);
     }
     public void insertTableRoles(String roleName) throws SQLException {
-        // code
+        String sql = "INSERT INTO  Roles (roleName) VALUES(" + roleName + ");";
+        statement.executeUpdate(sql);
     }
     public void insertTableDirections(String directionName) throws SQLException {
-        // code
+        String sql = "INSERT INTO  Directions (directionName) VALUES(" + directionName + ");";
+        statement.executeUpdate(sql);
     }
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
-        // code
+        String sql = "INSERT INTO  Projects (projectName, directionName) VALUES(" + projectName +
+                "," + directionName + ");";
+        statement.executeUpdate(sql);
     }
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
-        // code
+        String sql = "INSERT INTO  Employee (firstName, roleName, projectName) VALUES(" + firstName +
+                "," + roleName + "," + projectName + ");";
+        statement.executeUpdate(sql);
     }
 //    public int getRoleId(String roleName) throws SQLException {
 //        // code
@@ -128,18 +136,29 @@ public class MyUtils {
 //    }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         MyUtils myUtils = new MyUtils();
         try {
             myUtils.createConnection();
             myUtils.createStatement();
             myUtils.createSchema("softserve");
             myUtils.useSchema();
+//
+//            myUtils.createTableRoles();
+//            myUtils.createTableDirections();
+//            myUtils.createTableProjects();
+//            myUtils.createTableEmployee();
 
-            myUtils.createTableRoles();
-            myUtils.createTableDirections();
-            myUtils.createTableProjects();
-            myUtils.createTableEmployee();
-
+            myUtils.insertTableRoles("Developer");
+            myUtils.insertTableRoles("Tester");
+            myUtils.insertTableDirections("Java");
+            myUtils.insertTableDirections("C++");
+            myUtils.insertTableProjects("Softserve", "Java");
+            myUtils.insertTableProjects("DOU", "Java");
+            myUtils.insertTableEmployee("Petrov", "Developer", "Softserve");
+            myUtils.insertTableEmployee("Ivanov", "Tester", "Softserve");
+            myUtils.insertTableEmployee("Mikhaylov", "Tester", "DOU");
 //            myUtils.dropTable("Roles");
 //            myUtils.dropSchema();
 
@@ -148,6 +167,7 @@ public class MyUtils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 }
 
