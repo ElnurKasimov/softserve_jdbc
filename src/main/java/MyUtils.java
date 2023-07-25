@@ -84,7 +84,7 @@ public class MyUtils {
         statement.executeUpdate(sql);
     }
     public void dropTable(String tableName) throws SQLException {
-        String sql = "DROP TABLE IF  EXISTS " + tableName;
+        String sql = "DROP TABLE IF EXISTS " + tableName + ";";
         statement.executeUpdate(sql);
     }
     public void insertTableRoles(String roleName) throws SQLException {
@@ -143,27 +143,74 @@ public class MyUtils {
     }
 
 
-//    public List<String> getAllRoles() throws SQLException {
-//        // code
-//    }
-//    public List<String> getAllDirestion() throws SQLException {
-//        // code
-//    }
-//    public List<String> getAllProjects() throws SQLException {
-//        // code
-//    }
-//    public List<String> getAllEmployee() throws SQLException {
-//        // code
-//    }
-//    public List<String> getAllDevelopers() throws SQLException {
-//        // code
-//    }
-//    public List<String> getAllJavaProjects() throws SQLException {
-//        // code
-//    }
-//    public List<String> getAllJavaDevelopers() throws SQLException {
-//        // code
-//    }
+    public List<String> getAllRoles() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT roleName FROM Roles";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
+    public List<String> getAllDirestion() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT directionName FROM Directions";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
+    public List<String> getAllProjects() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT projectName FROM Projects";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
+    public List<String> getAllEmployee() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT firstName FROM Employee";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
+    public List<String> getAllDevelopers() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT e.firstName FROM Employee e LEFT JOIN Roles r " +
+                    "ON e.roleId = r.id WHERE r.roleName LIKE 'Developer';";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
+    public List<String> getAllJavaProjects() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT p.projectName FROM Projects p LEFT JOIN Directions d " +
+                "ON p.directionId = d.id WHERE d.directionName LIKE 'Java';";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
+    public List<String> getAllJavaDevelopers() throws SQLException {
+        List<String> result = new ArrayList<>();
+        String sql = "SELECT e.firstName from Roles r JOIN Employee e ON r.id = e.roleId " +
+                "JOIN Projects p ON e.projectId = p.id " +
+                "JOIN Directions d ON p.directionId = d.id WHERE " +
+                "d.directionName LIKE 'Java' AND r.roleName LIKE 'Developer';";
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            result.add(rs.getString(1));
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -173,27 +220,36 @@ public class MyUtils {
             myUtils.createConnection();
             myUtils.createStatement();
 //            myUtils.createSchema("softserve");
-
             myUtils.useSchema();
-
 //            myUtils.createTableRoles();
 //            myUtils.createTableDirections();
 //            myUtils.createTableProjects();
 //            myUtils.createTableEmployee();
 
-            myUtils.insertTableRoles("Developer");
-            myUtils.insertTableRoles("Tester");
-            myUtils.insertTableDirections("Java");
-            myUtils.insertTableDirections("C++");
-            myUtils.insertTableProjects("Softserve", "Java");
-            myUtils.insertTableProjects("DOU", "Java");
-            myUtils.insertTableEmployee("Petrov", "Developer", "Softserve");
-            myUtils.insertTableEmployee("Ivanov", "Tester", "Softserve");
-            myUtils.insertTableEmployee("Mikhaylov", "Tester", "DOU");
+//            myUtils.insertTableRoles("Developer");
+//            myUtils.insertTableRoles("Tester");
+//            myUtils.insertTableDirections("Java");
+//            myUtils.insertTableDirections("C++");
+//            myUtils.insertTableProjects("Softserve", "Java");
+//            myUtils.insertTableProjects("DOU", "Java");
+//            myUtils.insertTableProjects("BeetRoot", "C++");
+//            myUtils.insertTableProjects("IBM", "C++");
+//            myUtils.insertTableProjects("DOU", "Java");
+//            myUtils.insertTableProjects("DOU", "Java");
+//            myUtils.insertTableEmployee("Petrov", "Developer", "Softserve");
+//            myUtils.insertTableEmployee("Ivanov", "Tester", "Softserve");
+//            myUtils.insertTableEmployee("Mikhaylov", "Tester", "DOU");
+//            myUtils.insertTableEmployee("Mike", "Developer", "IBM");
+//            myUtils.insertTableEmployee("Nick", "Tester", "IBM");
+            myUtils.insertTableEmployee("Oleg", "Tester", "BettRoot");
+            myUtils.insertTableEmployee("Olga", "Developer", "BettRoot");
 
-
-
-
+//            System.out.println(myUtils.getAllRoles());
+//            System.out.println(myUtils.getAllDirestion());
+//            System.out.println(myUtils.getAllProjects());
+//            System.out.println(myUtils.getAllEmployee());
+//            System.out.println(myUtils.getAllDevelopers());
+//            System.out.println(myUtils.getAllJavaProjects());
 //            myUtils.dropTable("Roles");
 //            myUtils.dropSchema();
 
