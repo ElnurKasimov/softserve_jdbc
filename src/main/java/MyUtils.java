@@ -45,7 +45,8 @@ public class MyUtils {
     public void createTableRoles() throws SQLException {
         String sql = "CREATE TABLE IF NOT EXISTS Roles (" +
                 "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "roleName VARCHAR(255)" +
+                "roleName VARCHAR(255) NOT NULL," +
+                "UNIQUE (roleName)" +
                 ")";
         statement.executeUpdate(sql);
     }
@@ -53,7 +54,8 @@ public class MyUtils {
     public void createTableDirections() throws SQLException {
         String sql = "CREATE TABLE IF NOT EXISTS Directions (" +
                 "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "directionName VARCHAR(255)" +
+                "directionName VARCHAR(255) NOT NULL," +
+                "UNIQUE (directionName)" +
                 ")";
         statement.executeUpdate(sql);
     }
@@ -61,8 +63,9 @@ public class MyUtils {
     public void createTableProjects() throws SQLException {
         String sql = "CREATE TABLE IF NOT EXISTS Projects (" +
                 "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "projectName VARCHAR(255)," +
-                "directionId INT," +
+                "projectName VARCHAR(255) NOT NULL," +
+                "directionId INT NOT NULL," +
+                "UNIQUE (projectName)," +
                 "FOREIGN KEY(directionId) REFERENCES Directions(id)" +
                 ")";
         statement.executeUpdate(sql);
@@ -71,11 +74,12 @@ public class MyUtils {
     public void createTableEmployee() throws SQLException {
         String sql = "CREATE TABLE IF NOT EXISTS Employee (" +
                 "id INT AUTO_INCREMENT PRIMARY KEY," +
-                "firstName VARCHAR(255)," +
-                "roleId INT," +
-                "directionId INT," +
+                "firstName VARCHAR(255) NOT NULL," +
+                "roleId INT NOT NULL," +
+                "projectId INT NOT NULL," +
+                "UNIQUE (firstName)," +
                 "FOREIGN KEY(roleId) REFERENCES Roles(id)," +
-                "FOREIGN KEY(directionId) REFERENCES Directions(id)" +
+                "FOREIGN KEY(projectId) REFERENCES Projects(id)" +
                 ")";
         statement.executeUpdate(sql);
     }
@@ -92,29 +96,53 @@ public class MyUtils {
         statement.executeUpdate(sql);
     }
     public void insertTableProjects(String projectName, String directionName) throws SQLException {
-        String sql = "INSERT INTO  Projects (projectName, directionName) VALUES ('" + projectName +
+        String sql = "INSERT INTO  Projects (projectName, directionId) VALUES ('" + projectName +
                 "'," + getDirectionId(directionName) + ");";
         statement.executeUpdate(sql);
     }
     public void insertTableEmployee(String firstName, String roleName, String projectName) throws SQLException {
-        String sql = "INSERT INTO  Employee (firstName, roleName, projectName) VALUES ('" + firstName +
+        String sql = "INSERT INTO  Employee (firstName, roleId, projectId) VALUES ('" + firstName +
                 "'," + getRoleId(roleName) + "," + getProjectId(projectName) + ");";
         statement.executeUpdate(sql);
     }
     public int getRoleId(String roleName) throws SQLException {
-        return  1;
+        String sql = "SELECT id FROM Roles WHERE roleName LIKE '" + roleName + "';";
+        ResultSet rs = statement.executeQuery(sql);
+        int result = -1;
+        while (rs.next()) {
+            result = rs.getInt(1);
+        }
+        return result;
     }
     public int getDirectionId(String directionName) throws SQLException {
-
-        return 1;
+        String sql = "SELECT id FROM Directions WHERE directionName LIKE '" + directionName + "';";
+        ResultSet rs = statement.executeQuery(sql);
+        int result = -1;
+        while (rs.next()) {
+            result = rs.getInt(1);
+        }
+        return result;
     }
     public int getProjectId(String projectName) throws SQLException {
-
-        return  1;
+        String sql = "SELECT id FROM Projects WHERE projectName LIKE '" + projectName + "';";
+        ResultSet rs = statement.executeQuery(sql);
+        int result = -1;
+        while (rs.next()) {
+            result = rs.getInt(1);
+        }
+        return result;
     }
-//    public int getEmployeeId(String firstName) throws SQLException {
-//        // code
-//    }
+    public int getEmployeeId(String firstName) throws SQLException {
+        String sql = "SELECT id FROM Employee WHERE firstName LIKE '" + firstName + "';";
+        ResultSet rs = statement.executeQuery(sql);
+        int result = -1;
+        while (rs.next()) {
+            result = rs.getInt(1);
+        }
+        return result;
+    }
+
+
 //    public List<String> getAllRoles() throws SQLException {
 //        // code
 //    }
@@ -147,7 +175,7 @@ public class MyUtils {
 //            myUtils.createSchema("softserve");
 
             myUtils.useSchema();
-//
+
 //            myUtils.createTableRoles();
 //            myUtils.createTableDirections();
 //            myUtils.createTableProjects();
@@ -162,6 +190,10 @@ public class MyUtils {
             myUtils.insertTableEmployee("Petrov", "Developer", "Softserve");
             myUtils.insertTableEmployee("Ivanov", "Tester", "Softserve");
             myUtils.insertTableEmployee("Mikhaylov", "Tester", "DOU");
+
+
+
+
 //            myUtils.dropTable("Roles");
 //            myUtils.dropSchema();
 

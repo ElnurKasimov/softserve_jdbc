@@ -1,328 +1,40 @@
-2023-07-24 22:22:04 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:395)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:972)
-	at org.h2.server.web.WebApp.process(WebApp.java:241)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 22 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	... 16 more
-2023-07-24 22:22:04 database: opening G:/IdeaProjects/jom_jdbc/test
-org.h2.message.DbException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
-	at org.h2.mvstore.db.Store.<init>(Store.java:145)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:972)
-	at org.h2.server.web.WebApp.process(WebApp.java:241)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 17 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	... 14 more
-2023-07-24 22:28:44 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:395)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:972)
-	at org.h2.server.web.WebApp.process(WebApp.java:241)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 22 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	... 16 more
-2023-07-24 22:28:44 database: opening G:/IdeaProjects/jom_jdbc/test
-org.h2.message.DbException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
-	at org.h2.mvstore.db.Store.<init>(Store.java:145)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:972)
-	at org.h2.server.web.WebApp.process(WebApp.java:241)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 17 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	... 14 more
-2023-07-24 22:28:46 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:395)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.login(WebApp.java:1033)
-	at org.h2.server.web.WebApp.process(WebApp.java:226)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 22 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	... 16 more
-2023-07-24 22:28:46 database: opening G:/IdeaProjects/jom_jdbc/test
-org.h2.message.DbException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
-	at org.h2.mvstore.db.Store.<init>(Store.java:145)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.login(WebApp.java:1033)
-	at org.h2.server.web.WebApp.process(WebApp.java:226)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 17 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	... 14 more
-2023-07-24 22:30:11 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:395)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:972)
-	at org.h2.server.web.WebApp.process(WebApp.java:241)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]"
-General error: "org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]" [50000-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 22 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	... 16 more
-2023-07-24 22:30:11 database: opening G:/IdeaProjects/jom_jdbc/test
-org.h2.message.DbException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
-	at org.h2.mvstore.db.Store.<init>(Store.java:145)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:972)
-	at org.h2.server.web.WebApp.process(WebApp.java:241)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Неподдерживаемая версия файлов базы данных или некорректный заголовок в файле "G:/IdeaProjects/jom_jdbc/test.mv.db"
-Unsupported database file version or invalid file header in file "G:/IdeaProjects/jom_jdbc/test.mv.db" [90048-214]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
-	... 17 more
-Caused by: org.h2.mvstore.MVStoreException: The write format 3 is larger than the supported format 2 [2.1.214/5]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
-	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
-	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:883)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
-	at org.h2.mvstore.db.Store.<init>(Store.java:136)
-	... 14 more
-2023-07-24 22:39:21 database: wrong user or password; user: "ROOT"
-org.h2.message.DbException: Неверное имя пользователя или пароль
-Wrong user name or password [28000-220]
+2023-07-25 12:37:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DIRECTIONALNAME" не найден
+Column "DIRECTIONALNAME" not found; SQL statement:
+CREATE TABLE IF NOT EXISTS Directions (id INT AUTO_INCREMENT PRIMARY KEY,directionName VARCHAR(255) NOT NULL,UNIQUE (directionalName)) [42122-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.message.DbException.get(DbException.java:188)
-	at org.h2.engine.Engine.openSession(Engine.java:154)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:978)
-	at org.h2.server.web.WebApp.process(WebApp.java:242)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Неверное имя пользователя или пароль
-Wrong user name or password [28000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:184)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:182)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:134)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at MyUtils.createTableDirections(MyUtils.java:60)
+	at MyUtils.main(MyUtils.java:156)
+2023-07-25 12:38:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Схема "SOFTSERVE" уже существует
+Schema "SOFTSERVE" already exists; SQL statement:
+CREATE SCHEMA softserve [90078-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 16 more
-2023-07-24 22:39:27 database: wrong user or password; user: "ROOT"
-org.h2.message.DbException: Неверное имя пользователя или пароль
-Wrong user name or password [28000-220]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.message.DbException.get(DbException.java:188)
-	at org.h2.engine.Engine.openSession(Engine.java:154)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:978)
-	at org.h2.server.web.WebApp.process(WebApp.java:242)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
-	at org.h2.server.web.WebThread.run(WebThread.java:101)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Неверное имя пользователя или пароль
-Wrong user name or password [28000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 16 more
-2023-07-24 22:39:53 database: wrong user or password; user: "ROOT"
+	at org.h2.command.ddl.CreateSchema.update(CreateSchema.java:48)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at MyUtils.createSchema(MyUtils.java:35)
+	at MyUtils.main(MyUtils.java:151)
+2023-07-25 12:39:48 database: wrong user or password; user: "ROOT"
 org.h2.message.DbException: Неверное имя пользователя или пароль
 Wrong user name or password [28000-220]
 	at org.h2.message.DbException.get(DbException.java:223)
@@ -346,541 +58,146 @@ Wrong user name or password [28000-220]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 16 more
-2023-07-24 23:44:24 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+2023-07-25 13:24:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "EMPLOYEE" не найдена
+Table "EMPLOYEE" not found; SQL statement:
+truncate table Employee [42102-220]
+2023-07-25 13:24:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "PROJECTS" не найдена
+Table "PROJECTS" not found; SQL statement:
+truncate table Projects [42102-220]
+2023-07-25 13:24:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ROLES" не найдена
+Table "ROLES" not found; SQL statement:
+truncate table Roles [42102-220]
+2023-07-25 13:24:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "DIRECTIONS" не найдена
+Table "DIRECTIONS" not found; SQL statement:
+truncate table Directions [42102-220]
+2023-07-25 13:24:46 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "SOFTSERVE.PROJECTS"
+Cannot truncate "SOFTSERVE.PROJECTS"; SQL statement:
+truncate table Projects [90106-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:44:24 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:44:52 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:44:52 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:46:25 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:46:25 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:51:17 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:51:17 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:51:33 database: wrong user or password; user: "ROOT"
-org.h2.message.DbException: Неверное имя пользователя или пароль
-Wrong user name or password [28000-220]
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.message.DbException.get(DbException.java:188)
-	at org.h2.engine.Engine.openSession(Engine.java:154)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
-	at org.h2.server.web.WebApp.test(WebApp.java:978)
-	at org.h2.server.web.WebApp.process(WebApp.java:242)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
-	at org.h2.server.web.WebThread.process(WebThread.java:152)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
 	at org.h2.server.web.WebThread.run(WebThread.java:101)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Неверное имя пользователя или пароль
-Wrong user name or password [28000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 16 more
-2023-07-24 23:58:33 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-24 23:58:33 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-25 00:04:12 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:144)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-25 00:04:12 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:144)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-25 00:06:49 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-25 00:06:49 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.get(DbException.java:212)
-	at org.h2.message.DbException.convert(DbException.java:407)
-	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
-	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
-	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
-	at org.h2.mvstore.db.Store.<init>(Store.java:133)
-	at org.h2.engine.Database.<init>(Database.java:324)
-	at org.h2.engine.Engine.openSession(Engine.java:92)
-	at org.h2.engine.Engine.openSession(Engine.java:222)
-	at org.h2.engine.Engine.createSession(Engine.java:201)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
-	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
-	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
-	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
-	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
-	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
-	... 13 more
-2023-07-25 00:17:41 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Схема "SOFTSERVE" уже существует
-Schema "SOFTSERVE" already exists; SQL statement:
-CREATE SCHEMA softserve [90078-220]
+2023-07-25 13:24:46 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "SOFTSERVE.ROLES"
+Cannot truncate "SOFTSERVE.ROLES"; SQL statement:
+truncate table Roles [90106-220]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.command.ddl.CreateSchema.update(CreateSchema.java:48)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
 	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
 	at org.h2.command.Command.executeUpdate(Command.java:252)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
-	at MyUtils.createSchema(MyUtils.java:35)
-	at MyUtils.main(MyUtils.java:145)
-2023-07-25 00:18:30 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Схема null не найдена
-Schema null not found; SQL statement:
-SET SCHEMA null [90079-220]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-25 13:24:46 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "SOFTSERVE.DIRECTIONS"
+Cannot truncate "SOFTSERVE.DIRECTIONS"; SQL statement:
+truncate table Directions [90106-220]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
 	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.engine.Database.getSchema(Database.java:1548)
-	at org.h2.command.dml.Set.update(Set.java:397)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
 	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
 	at org.h2.command.Command.executeUpdate(Command.java:252)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
-	at MyUtils.useSchema(MyUtils.java:43)
-	at MyUtils.main(MyUtils.java:146)
-2023-07-25 00:20:50 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DEVELOPER" не найден
-Column "DEVELOPER" not found; SQL statement:
-INSERT INTO  Roles (roleName) VALUES(Developer); [42122-220]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-25 13:25:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "SOFTSERVE.PROJECTS"
+Cannot truncate "SOFTSERVE.PROJECTS"; SQL statement:
+truncate table Projects [90106-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-25 13:26:08 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "SOFTSERVE.DIRECTIONS"
+Cannot truncate "SOFTSERVE.DIRECTIONS"; SQL statement:
+truncate table Directions [90106-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-25 13:28:59 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "SOFTSERVE.DIRECTIONS"
+Cannot truncate "SOFTSERVE.DIRECTIONS"; SQL statement:
+truncate table Directions [90106-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-25 13:29:23 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DIRECTIONID" не найден
+Column "DIRECTIONID" not found; SQL statement:
+delete from directions where directionId in (1,2) [42122-220]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
@@ -888,27 +205,26 @@ INSERT INTO  Roles (roleName) VALUES(Developer); [42122-220]
 	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
 	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
 	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
-	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
+	at org.h2.expression.condition.ConditionIn.optimize(ConditionIn.java:99)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.dml.Delete.doPrepare(Delete.java:112)
 	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
 	at org.h2.command.Parser.prepareCommand(Parser.java:583)
 	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:634)
 	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:557)
 	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:186)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
-	at MyUtils.insertTableRoles(MyUtils.java:88)
-	at MyUtils.main(MyUtils.java:154)
-2023-07-25 00:21:52 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ROLES" не найдена
-Table "ROLES" not found; SQL statement:
-select * from Roles [42102-220]
-2023-07-25 00:22:29 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ROLES" не найдена
-Table "ROLES" not found; SQL statement:
-select * from roles [42102-220]
-2023-07-25 00:24:46 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-25 13:34:37 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -924,25 +240,25 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProj
 	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
 	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
 	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
 	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at MyUtils.main(MyUtils.java:177)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 13 more
-2023-07-25 00:24:46 database: flush
-org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+2023-07-25 13:34:37 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -958,84 +274,159 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProj
 	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
 	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
 	at org.h2.Driver.connect(Driver.java:59)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
 	at MyUtils.createConnection(MyUtils.java:19)
-	at MyUtils.main(MyUtils.java:143)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at MyUtils.main(MyUtils.java:177)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 19 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: G:/IdeaProjects/jom_jdbc/test.mv.db [2.2.220/7]
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 13 more
-2023-07-25 00:27:33 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DEVELOPER" не найден
-Column "DEVELOPER" not found; SQL statement:
-INSERT INTO  Roles (roleName) VALUES (Developer); [42122-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+2023-07-25 13:35:02 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at MyUtils.createConnection(MyUtils.java:19)
+	at MyUtils.main(MyUtils.java:177)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	at org.h2.message.DbException.get(DbException.java:223)
-	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
-	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
-	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
-	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
-	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
-	at org.h2.command.Parser.prepareCommand(Parser.java:583)
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:634)
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:557)
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:186)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
-	at MyUtils.insertTableRoles(MyUtils.java:88)
-	at MyUtils.main(MyUtils.java:154)
-2023-07-25 00:30:32 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "JAVA" не найден
-Column "JAVA" not found; SQL statement:
-INSERT INTO  Directions (directionName) VALUES (Java); [42122-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-07-25 13:35:02 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at MyUtils.createConnection(MyUtils.java:19)
+	at MyUtils.main(MyUtils.java:177)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	at org.h2.message.DbException.get(DbException.java:223)
-	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
-	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
-	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
-	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
-	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
-	at org.h2.command.Parser.prepareCommand(Parser.java:583)
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:634)
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:557)
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:186)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
-	at MyUtils.insertTableDirections(MyUtils.java:92)
-	at MyUtils.main(MyUtils.java:156)
-2023-07-25 00:31:56 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "DIRECTIONNAME" не найден
-Column "DIRECTIONNAME" not found; SQL statement:
-INSERT INTO  Projects (projectName, directionName) VALUES ('Softserve','Java'); [42122-220]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-07-25 13:36:17 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at MyUtils.createConnection(MyUtils.java:19)
+	at MyUtils.main(MyUtils.java:177)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	at org.h2.message.DbException.get(DbException.java:223)
-	at org.h2.message.DbException.get(DbException.java:199)
-	at org.h2.table.Table.getColumn(Table.java:759)
-	at org.h2.command.Parser.parseColumn(Parser.java:1300)
-	at org.h2.command.Parser.parseColumnList(Parser.java:1285)
-	at org.h2.command.Parser.parseInsert(Parser.java:1672)
-	at org.h2.command.Parser.parsePrepared(Parser.java:822)
-	at org.h2.command.Parser.parse(Parser.java:697)
-	at org.h2.command.Parser.parse(Parser.java:669)
-	at org.h2.command.Parser.prepareCommand(Parser.java:577)
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:634)
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:557)
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:186)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
-	at MyUtils.insertTableProjects(MyUtils.java:97)
-	at MyUtils.main(MyUtils.java:158)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-07-25 13:36:17 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at MyUtils.createConnection(MyUtils.java:19)
+	at MyUtils.main(MyUtils.java:177)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Внутренняя ошибка: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/tmp/softserve_jdbc/test.mv.db [2.2.220/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-07-25 15:57:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "ROLES" не найдена
+Table "ROLES" not found; SQL statement:
+select * from roles: [42102-220]
